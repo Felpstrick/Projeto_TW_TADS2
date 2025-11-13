@@ -26,6 +26,7 @@
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <li class="nav-item"><a class="nav-link me-lg-3" href="formReserva.php">Reserve</a></li>
                         <li class="nav-item"><a class="nav-link me-lg-3" href="about.php">Sobre nós</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="formLogin.php">Login</a></li>
                     </ul>
                     
                 </div>
