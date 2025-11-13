@@ -8,7 +8,6 @@
 // 
 
 window.addEventListener('DOMContentLoaded', event => {
-
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
