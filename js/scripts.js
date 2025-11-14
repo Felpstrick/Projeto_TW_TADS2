@@ -31,3 +31,12 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+//Glogal func for fade-in effect
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll('.fade');
+    elements.forEach((el) => {
+        el.classList.add('in');
+    });
+});
