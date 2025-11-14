@@ -1,4 +1,4 @@
-<?php include("header.php") ?>
+<?php include("includes/header.php") ?>
         <!-- Mashead header-->
         <header class="masthead fade">
             <div class="container px-5">
@@ -43,4 +43,4 @@
             </div>
         </section>
 
-<?php include("footer.php") ?>
+<?php include("includes/footer.php") ?>
