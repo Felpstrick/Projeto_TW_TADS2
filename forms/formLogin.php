@@ -13,7 +13,7 @@
                             <input type="password" class="form-control" id="senhaLogin" name="senhaLogin" placeholder="Digite sua senha" required>
                             <label for="senhaLogin" class="form-label">Senha: </label>
                         </div>
-                        <button type="submit" class="btn btn-dark w-100">Login <i class="bi bi-person-check-fill"></i></button>
+                        <button type="submit" class="btn btn-dark w-100" id="btnLogin" disabled>Login <i class="bi bi-person-check-fill"></i></button>
                     </form>
                     <p name="msgLogin" id="msgLogin"></p>
                     <br>

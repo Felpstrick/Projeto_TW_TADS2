@@ -45,3 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
 $(document).ready(function(){
     $("#telefoneUsuario").mask('(00) 00000-0000');
 });
+

@@ -4,7 +4,11 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4">
                     <h2 class="fw-bolder mb-4 text-center">Cadstro de livros</h2>
-                    <form action="<?= baseUrl ?>actions/actionLivro.php" method="post" name="formLivro" id="formLivro">
+                    <form action="<?= baseUrl ?>actions/actionLivro.php" method="post" name="formLivro" id="formLivro" enctype="multipart/form-data">
+                        <div class="form-control mb-3 mt-3">
+                            <label for="fotoLivro">Foto: </label>
+                            <input type="file" class="form-control" id="fotoLivro" name="fotoLivro" placeholder="Insira uma foto do livro: " required>
+                        </div>
                         <div class="form-floating mb-3 mt-3">
                             <input type="text" class="form-control" id="nomeLivro" name="nomeLivro" placeholder="Digite o nome do livro: " required>
                             <label for="nomeLivro">Livro: </label>
@@ -25,7 +29,7 @@
                             <input type="generoLivro" class="form-control" id="generoLivro" name="generoLivro" placeholder="Digite o gênero do livro: " required>
                             <label for="generoLivro" class="form-label">Gênero: </label>
                         </div>
-                        <button type="submit" class="btn btn-dark w-100">Cadastrar</button>
+                        <button type="submit" class="btn btn-dark w-100" id="btnLivro">Cadastrar</button>
                     </form>
                     <p name="msgLivro" id="msgLivro"></p>
                     <br>

@@ -25,7 +25,7 @@
                             <input type="password" class="form-control" id="confirmarSenhaUsuario" name="confirmarSenhaUsuario" placeholder="Confime sua senha" required>
                             <label for="confirmarSenhaUsuario" class="form-label">Confirme sua senha: </label>
                         </div>
-                        <button type="submit" class="btn btn-dark w-100">Cadastrar</button>
+                        <button type="submit" class="btn btn-dark w-100" id="btnCadastro" disabled>Cadastrar</button>
                     </form>
                     <p name="msgCadastro" id="msgCadastro"></p>
                     <br>

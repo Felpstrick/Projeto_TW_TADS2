@@ -1,4 +1,3 @@
-<?php require("../includes/config.php") ?>
 <?php include("../includes/header.php") ?>
 
 <?php  
@@ -16,20 +15,44 @@
             $ok = false;
             echo"<span class='text-danger'>Campos não preenchidos</span>";
         }
+        $directory    = "../assets/img/books/";
+        $fotoLivro  = $directory.basename($_FILES["fotoLivro"]["name"]);
+        $uploadOK     = true;
+        $imgType = strtolower(pathinfo($fotoLivro, PATHINFO_EXTENSION));
+
+        if($_FILES["fotoLivro"]["size"] > 5000000) {
+            echo "<div class='alert alert-warning'>Atenção! A foto ultrapassa o <strong>TAMANHO MÁXIMO</strong> permitido (5MB)!</div>";
+            $uploadOK = false;
+        }
+        if($imgType != "jpg" && $imgType != "png" && $imgType != "jpeg") {
+            echo "<div class='alert alert-warning'>Atenção! Apenas <strong>JPG, JPEG, PNG</strong> são permitidos!</div>";
+            $uploadOK = false;
+        }
+        else{
+            if(!move_uploaded_file($_FILES["fotoLivro"]["tmp_name"], $fotoLivro)){
+                echo "<div class='alert alert-warning'>Erro ao tentar mover 
+                    <strong>A FOTO</strong> para o diretório $diretorio!</div>";
+                $uploadOK = false;
+            }
+        }
         
 
-        if ($ok) {
+        if ($ok && $uploadOK) {
             include("../includes/conn.php");
-            $sql = "INSERT INTO livro (titulo, editora, ano_publicacao, genero, status) 
-            VALUES ('$tituloLivro', '$editoraLivro', '$anoPublicacao', '$generoLivro', 'disponivel')";
+            $sql = "INSERT INTO livro (foto, titulo, editora, ano_publicacao, genero, status) 
+            VALUES ('$fotoLivro', '$tituloLivro', '$editoraLivro', '$anoPublicacao', '$generoLivro', 'disponivel')";
             mysqli_query($link, $sql);
             mysqli_close($link);
-            echo"<div class='container align-center text-center jusftify-content-center'>
-                    <span class='text-success mt-5'>Cadastro realizado com sucesso!</span>
-                </div>";
+            echo"<div class='container align-center text-center jusftify-content-center mt-5 p-5'>
+                    <p class='alert alert-success mt-5'>Cadastro realizado com sucesso!</p>
+                </div>
+                <script>
+                    setTimeout(function(){
+                        window.location.href = '" . baseUrl . "';
+                    }, 3000);
+                </script>";
         }
     }
-
 ?>
 
 <?php include("../includes/footer.php") ?>
