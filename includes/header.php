@@ -14,6 +14,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="<?= baseUrl ?>css/styles.css" rel="stylesheet" />
+        <!-- scripts jQuery for masks -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+        
+        <script src="<?= baseUrl ?>js/scripts.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -25,6 +30,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="<?= baseUrl ?>forms/formLivro.php">Cadastrar livro</a></li>
                         <li class="nav-item"><a class="nav-link me-lg-3" href="<?= baseUrl ?>forms/formReserva.php">Reserve</a></li>
                         <li class="nav-item"><a class="nav-link me-lg-3" href="<?= baseUrl ?>includes/about.php">Sobre nós</a></li>
                         <li class="nav-item"><a class="nav-link me-lg-3" href="<?= baseUrl ?>forms/formLogin.php">Login</a></li>
