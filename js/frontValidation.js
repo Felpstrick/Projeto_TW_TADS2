@@ -1,6 +1,6 @@
 
-// Login validation script
 
+// Login validation script
 const formLogin = document.getElementById('formLogin');
 const msgLogin = document.getElementById('msgLogin');
 
@@ -29,6 +29,7 @@ if (formLogin) {
     })
 }
 
+// User registration validation script
 const formUsuario = document.getElementById('formUsuario');
 const msgCadastro = document.getElementById('msgCadastro');
 
@@ -60,6 +61,29 @@ if (formUsuario){
         }
         else {
             formUsuario.submit();
+        }
+    });
+}
+
+
+// Book registration validation script
+const formLivro = document.getElementById('formLivro');
+const msgLivro = document.getElementById('msgLivro');
+if (formLivro){
+    formLivro.addEventListener('submit', (erroPreenchimento) => {
+        erroPreenchimento.preventDefault();
+        
+        const nomeLivro = document.getElementById('nomeLivro').value.trim();
+        const autorLivro = document.getElementById('autorLivro').value.trim();
+        const editoraLivro = document.getElementById('editoraLivro').value.trim();
+        const publicacaoLivro = document.getElementById('publicacaoLivro').value.trim();
+        const generoLivro = document.getElementById('generoLivro').value.trim();
+        if (nomeLivro === '' || autorLivro === '' || editoraLivro === '' || publicacaoLivro === '' || generoLivro === '') {
+            msgLivro.style.color = 'red';
+            msgLivro.innerHTML = 'Por favor, preencha todos os campos.';
+        }
+        else {
+            formLivro.submit();
         }
     });
 }
