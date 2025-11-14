@@ -1,4 +1,4 @@
-<?php require("config.php") ?>
+
 <?php include("header.php") ?>
         <div class="container-fluid px-5 my-5 p-5 fade">
             <div class="row">

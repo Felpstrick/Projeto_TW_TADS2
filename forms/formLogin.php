@@ -1,4 +1,4 @@
-<?php require("../includes/config.php") ?>
+
 <?php include("../includes/header.php") ?>
         <div class="container px-5 my-5 p-5">
             <div class="row justify-content-center">

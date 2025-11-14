@@ -1,3 +1,4 @@
+        </div>
         <footer class="bg-black text-center py-2 fixed-bottom">
             <div class="container px-5">
                 <div class="text-white-50 small">
