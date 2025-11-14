@@ -1,5 +1,5 @@
 <?php include("header.php") ?>
-        <div class="container px-5 my-5 p-5">
+        <div class="container px-5 my-5 p-5 fade">
             <div class="row justify-content-center">
                 <div class="col-lg-4">
                     <h2 class="fw-bolder mb-4 text-center">Crie sua conta com facilidade</h2>

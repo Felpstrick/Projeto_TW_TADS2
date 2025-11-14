@@ -1,6 +1,6 @@
 <?php include("header.php") ?>
         <!-- Mashead header-->
-        <header class="masthead">
+        <header class="masthead fade">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
@@ -20,7 +20,7 @@
 
 
 
-        <aside class="text-center bg-dark py-5">
+        <aside class="text-center bg-dark py-5 fade">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xl-8">
@@ -34,7 +34,7 @@
         <!-- Basic features section-->
         
         <!-- App badge section-->
-        <section class="bg-light" id="download">
+        <section class="bg-light fade" id="download">
             <div class="container px-5">
                 <h2 class="text-center text-dark font-alt mb-4">Faça sua reserva agora mesmo!</h2>
                 <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
