@@ -11271,3 +11271,17 @@ footer a:hover, footer a:active, footer a:focus {
 .genre-bio         { background: #66bb6a; }
 .genre-hq          { background: #ab47bc; }
 .genre-ciencia     { background: #29b6f6; }
+
+.zoom-img {
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.zoom-img:hover {
+    transform: scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0%) brightness(0%) saturate(100%);
+}

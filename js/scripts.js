@@ -47,16 +47,25 @@ $(document).ready(function(){
 });
 
 
-document.getElementById('selecionarLivro').addEventListener('change', function() {
-    var selectedOption = this.options[this.selectedIndex].getAttribute('data-img');
+document.addEventListener('DOMContentLoaded', function() {
+    var select = document.getElementById('selecionarLivro')
     var imgReserva = document.getElementById('imgReserva');
-    if(selectedOption) {
+
+    function attImg() {
+        var selectedOption = select.options[select.selectedIndex].getAttribute('data-img');
+        if(selectedOption) {
         imgReserva.src = selectedOption;
         imgReserva.onload = () => {
 
             imgReserva.classList.add('in');
-        }
-    };
+            }
+        };
+
+    }
+    select.addEventListener('change', attImg);
+    attImg();
+    
+    
 
 });
 

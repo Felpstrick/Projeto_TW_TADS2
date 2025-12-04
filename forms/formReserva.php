@@ -44,7 +44,7 @@
                         <button type="submit" class="btn btn-dark w-100">Reservar</button>
                     </form>
                 </div>
-                <div class="col-lg-6 justify-content-center align-items-center d-flex fade">
+                <div class="col-lg-6 justify-content-center align-items-center d-flex fade p-5">
                     <img src="" alt="Imagem do Livro" id="imgReserva" class="img-fluid rounded mb-4 mb-sm-0" style="width: 300px"/>
                 </div>
             </div>

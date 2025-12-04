@@ -6,32 +6,36 @@
                     <h2 class="fw-bolder mb-4 text-center">Cadastro de livros</h2>
                     <form action="<?= baseUrl ?>actions/actionLivro.php" method="post" name="formLivro" id="formLivro" enctype="multipart/form-data">
                         <div class="form-control mb-3 mt-3">
-                            <label for="fotoLivro">Foto: </label>
-                            <input type="file" class="form-control" id="fotoLivro" name="fotoLivro" placeholder="Insira uma foto do livro: " required>
+                            <label for="fotoCapa">Capa do livro:* </label>
+                            <input type="file" class="form-control" id="fotoCapa" name="fotoCapa" placeholder="Insira uma foto do livro: " required>
+                        </div>
+                        <div class="form-control mb-3 mt-3">
+                            <label for="fotoComplementar">Fotos complementares: </label>
+                            <input type="file" class="form-control" id="fotoComplementar" name="fotoComplementar[]" placeholder="Insira uma foto do livro: " multiple>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <input type="text" class="form-control" id="nomeLivro" name="nomeLivro" placeholder="Digite o nome do livro: " required>
-                            <label for="nomeLivro">Livro: </label>
+                            <label for="nomeLivro">Livro:* </label>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <input type="text" class="form-control" id="autorLivro" name="autorLivro" placeholder="Digite o autor do livro: " required>
-                            <label for="autorLivro">Autor: </label>
+                            <label for="autorLivro">Autor:* </label>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <input type="text" class="form-control" id="editoraLivro" name="editoraLivro" placeholder="Digite a editora: " required>
-                            <label for="editoraLivro">Editora: </label>
+                            <label for="editoraLivro">Editora:* </label>
                         </div>
                         <div class="form-floating mb-3 mt-3">
                             <input type="date" class="form-control" id="publicacaoLivro" name="publicacaoLivro" required>
-                            <label for="publicacaoLivro">Data de publicação: </label>
+                            <label for="publicacaoLivro">Data de publicação:* </label>
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="generoLivro" class="form-control" id="generoLivro" name="generoLivro" placeholder="Digite o gênero do livro: " required>
-                            <label for="generoLivro" class="form-label">Gênero: </label>
+                            <label for="generoLivro" class="form-label">Gênero:* </label>
                         </div>
                         <div class="mb-3 form-floating">
                             <textarea name="descricaoLivro" id="descricaoLivro" class="form-control "></textarea>
-                            <label for="descricaoLivro" class="form-label">Descrição: </label>
+                            <label for="descricaoLivro" class="form-label">Descrição:* </label>
                         </div>
                         <button type="submit" class="btn btn-dark w-100" id="btnLivro">Cadastrar</button>
                     </form>

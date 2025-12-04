@@ -78,12 +78,22 @@
             </div>
         </section>
 
-        <?php 
+        <?php
+            $livrosPorPagina = 12;
+            $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+            if($pagina < 1) $pagina = 1;
+            $offset = ($pagina - 1) * $livrosPorPagina;
+
             include("includes/conn.php");
-            $query = "SELECT * FROM livro";
+            $query = "SELECT * FROM livro LIMIT $offset, $livrosPorPagina";
             $result = mysqli_query($link, $query);
-            $total = mysqli_num_rows($result);
-            if($total > 0){
+
+            $sqlTotal = "SELECT COUNT(*) AS total FROM livro";
+            $resultTotal = mysqli_query($link, $sqlTotal);
+
+            $totalLivros = mysqli_fetch_assoc($resultTotal)['total'];
+            $totalPaginas = ceil($totalLivros / $livrosPorPagina);
+            if($totalLivros > 0){
                 echo "<div class='row px-5 fade' name='estante' id='estante'>";
                     while($reg = mysqli_fetch_assoc($result)){
                         $idLivro = $reg['id'];
@@ -95,10 +105,10 @@
                         $fotoLivro = $reg['foto'];
                         $path = img_books . basename($fotoLivro);
                         echo "
-                            <div class='col-sm-12 col-md-3 col-lg-2 mb-4'>
+                            <div class='col-sm-6 col-md-3 col-lg-2 mb-4' box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);>
                                 <div class='card h-100' style='border-radius: 12px; max-width: 300px;'>
                                     <div style='aspect-ratio: 3 / 4; width: 90%; overflow: hidden;' class='mt-3 mb-1 align-self-center'>
-                                        <img src='$path' class='mb-3 card-img-top' alt='Capa do livro $tituloLivro' style='width: 100%; border-radius: 12px; height: 100%; display: block'/>
+                                        <a href='" . baseUrl . "includes/visualizarLivro.php?idLivro=$idLivro'><img src='$path' class='mb-3 card-img-top zoom-img' alt='Capa do livro $tituloLivro' style='width: 100%; border-radius: 12px; height: 100%; display: block'/></a>
                                     </div>
                                     <div class='card-body d-flex flex-column'>
                                         <h5 class='card-title'>$tituloLivro</h3>
@@ -120,6 +130,26 @@
                 echo "</div>";
                 }
             }
+            echo "<nav><ul class='pagination justify-content-center mt-4 '>";
+
+                if ($pagina > 1) {
+                    $prev = $pagina - 1;
+                    echo "<li class='page-item '><a class='page-link' style='background-color: black; color: white' href='?pagina=$prev'>Anterior</a></li>";
+                }
+
+                for ($i = 1; $i <= $totalPaginas; $i++) {
+                    $active = ($i == $pagina) ? 'active' : '';
+                    echo "<li class='page-item $active'>
+                            <a class='page-link'style='background-color: black; color: white' href='?pagina=$i'>$i</a>
+                        </li>";
+                }
+
+                if ($pagina < $totalPaginas) {
+                    $next = $pagina + 1;
+                    echo "<li class='page-item'><a class='page-link' style='background-color: black; color:white' href='?pagina=$next'>Próxima</a></li>";
+                }
+
+                echo "</ul></nav>";
 
 
             
